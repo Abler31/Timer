@@ -4,20 +4,20 @@
 
     <item
         android:id="@+id/actionSettings"
-        android:title="settings"
+        android:title="Settings"
         app:showAsAction="never"
         android:orderInCategory="1"/>
 
     <item
         android:id="@+id/actionAbout"
-        android:title="about"
+        android:title="About"
         app:showAsAction="never"
-        android:orderInCategory="1"/>
+        android:orderInCategory="2"/>
 
     <item
         android:id="@+id/actionPurchase"
-        android:title="purchase"
+        android:title="Purchase"
         app:showAsAction="never"
-        android:orderInCategory="1"/>
+        android:orderInCategory="3"/>
 
 </menu>

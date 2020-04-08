@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -72,8 +73,21 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.alarm);
-                    mediaPlayer.start();
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+                    if (sharedPreferences.getBoolean("enable_sound",true) == true ){
+                        String melodyName = sharedPreferences.getString("timer_melody", "alarm");
+                        if (melodyName.equals("alarm")){
+                            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.alarm);
+                            mediaPlayer.start();
+                        } else if (melodyName.equals("alarmSiren")){
+                            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.alarm_siren);
+                            mediaPlayer.start();
+                        } else if (melodyName.equals("bip")){
+                            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bip);
+                            mediaPlayer.start();
+                        }
+                    }
                     timerReset();
                 }
             };

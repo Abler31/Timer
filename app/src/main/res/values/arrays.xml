@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_timer_melody_labels">
+        <item>Alarm</item>
+        <item>AlarmSiren</item>
+        <item>Bip</item>
+    </array>
+
+    <array name="pref_timer_melody_values">
+        <item>alarm</item>
+        <item>alarmSiren</item>
+        <item>bip</item>
+    </array>
+</resources>
